@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste PI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 00020101021226740014br.gov.bcb.pix210812345678220412342308123456782420001122334455667788995204000053039865406123.455802BR5913FULANO DE  TAL6008BRASILIA62190515RP12345678-201980720014br.gov.bcb.pix2550bx.com.br/spi/U0VHUkVET1RPVEFMTUVOVEVBTEVBVE9SSU8=630434D1 -->
+
+        <div class="row justify-content-center">
+            <img src="qr-code-pi.png" alt="QR Code PI">
+        </div>
+
+        <div class="row justify-content-center">
+            <input name="pixInput" type="text" class="form-control m-3" id="pixInput" hidden readonly>
+            <button id="btn" class="btn-primary mt-2">
+                Copiar Pix
+            </button>
+        </div>
+        <div class="mt-5 justify-content">
+            <p align="justify" id="texto1">Você está usando um dispositivo móvel, selecione a opção "Copiar Pix", para
+                prosseguir
+                com o pagamento.</p>
+            <p align="justify" id="texto2" hidden>Pix copiado com sucesso, abra o app de seu banco e selecione a opção
+                "Pagar
+                com
+                Pix" para prosseguir.</p>
+        </div>
+    </div>
+
+    <script>
+        var clipboard = new ClipboardJS('#btn');
+
+
+        clipboard.on('success', function (e) {
+            var texto1 = document.getElementById('texto1');
+            var texto2 = document.getElementById('texto2');
+            texto2.hidden = false
+            texto1.hidden = true
+        });
+
+        var url = new URL(window.location.href);
+        var qrCode = '00020101021226740014br.gov.bcb.pix210812345678220412342308123456782420001122334455667788995204000053039865406<VALOR>5802BR5913<NOME_RECEBEDOR>6008BRASILIA62190515RP12345678-201980720014br.gov.bcb.pix2550bx.com.br/spi/U0VHUkVET1RPVEFMTUVOVEVBTEVBVE9SSU8=630434D1'
+        var nomeRecebedor = url.searchParams.get("nomeRecebedorInput");
+        var valor = url.searchParams.get("valorInput");
+        var check = url.searchParams.get("exampleCheck1");
+
+        nomeRecebedor = padSpaces(nomeRecebedor, 13)
+        valor = padSpaces(valor, 6)
+        console.log(nomeRecebedor);
+        console.log(valor);
+
+        qrCode = qrCode.replace('<VALOR>', valor)
+        qrCode = qrCode.replace('<NOME_RECEBEDOR>', nomeRecebedor)
+
+        console.log(qrCode);
+
+
+
+        qrCode = window.btoa(qrCode);
+
+        if (check) {
+            var pixInput = document.getElementById('pixInput');
+            pixInput.hidden = false;
+            pixInput.value = qrCode;
+        }
+
+
+
+
+
+        console.log(qrCode);
+
+        var btn = document.getElementById('btn');
+        btn.setAttribute('data-clipboard-text', qrCode)
+
+        function padSpaces(number, digits) {
+            return Array(Math.max(digits - String(number).length + 1, 0)).join(" ") + number;
+        }
+
+    </script>
+</body>
+
+</html>

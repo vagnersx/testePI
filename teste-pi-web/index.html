@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste PI</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+
+        <form class="mt-5" method="GET" action="teste-pi.html">
+            <h2>Pagamento</h2>
+            <hr />
+            <div class="form-group">
+                <label for="nomeRecebedorInput">Nome do Recebedor</label>
+                <input name="nomeRecebedorInput" type="text" class="form-control" id="nomeRecebedorInput"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength="13" required>
+                <small id="help" class="form-text text-muted">Tamanho 13 (Apenas para facilitar a simulação).</small>
+            </div>
+            <div class="form-group">
+                <label for="valorInput">Valor</label>
+                <input name="valorInput" type="text" class="form-control" id="valorInput" aria-describedby="help"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength="6" required>
+                <small id="help" class="form-text text-muted">Tamanho 6 (Apenas para facilitar a simulação).</small>
+            </div>
+            <div class="form-group form-check">
+                <input name="exampleCheck1" type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Exibir código Pix</label>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Pagar com Pix">
+            <!-- <a href="teste-pi.html" class="btn btn-primary">Pagar com Pixel</a> -->
+
+            <p class="mt-5">
+                <b>Orientações:</b>
+                <ul>
+                    <li>Utilize um smartphone para a realização desse teste.</li>
+                    <li>Este teste simula o fluxo onde o usuário pagador estará acessando um E-commerce</li>
+                    <li>As informações do QR Code gerado será o QR Code de exemplo apresentado no documento "Anexo I -
+                        Padrões para Iniciação do PIX" (Versão 1.2.006). </li>
+                    <li>Para fins de testes os campos do QR Code "Nome do Recebedor" (Merchant Name) e "Valor"
+                        (Transaction Amount) poderão ser alterados nesta tela. Observação: a imagem do QR Code não se
+                        altera, ela está sendo exibida para fins de exemplificação.</li>
+                    <li>A opção "Exibir código Pix" exibirá uma segunda alternativa de exibição onde os dados do QR Code
+                        poderá ser exibido. (As informações estão sendo apresentadas no formato Base64 para não expor de
+                        forma explicita as informações do QR Code)</li>
+                    <li>Essa abordagem não afeta a experiência do usuário no que diz respeito a escolher o app de seu banco para poder receber o pix</li>
+                    <li>O app para realização do teste pode ser encontrado no seguinte endereço:
+                        <a target="_blank"
+                            href="https://play.google.com/store/apps/details?id=br.com.testePI">https://play.google.com/store/apps/details?id=br.com.testePI</a>
+                    </li>
+                </ul>
+            </p>
+
+        </form>
+    </div>
+
+    <script>
+        function onInput13(e) {
+            if (e.currentTarget.value.length > 30) {
+                e.currentTarget.value = titleValue;
+                return;
+            }
+
+            inputValue = e.currentTarget.value;
+        }
+
+    </script>
+
+</body>
+
+</html>
