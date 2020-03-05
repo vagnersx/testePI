@@ -46,6 +46,6 @@ Destaca-se também que por se tratar da utilização da "área de transferência
 
 **Exemplo de uso**
 
-Para exemplificar o uso dessa abordagem em um cenário de *E-commerce*, disponibilizamos no endereço "[http://teste.vsxapps.com](http://teste.vsxapps.com/)" uma aplicação que simula de uma forma bem simples uma loja virtual e um app no endereço "[https://play.google.com/store/apps/details?id=br.com.testePI](https://play.google.com/store/apps/details?id=br.com.testePI)" que também de forma simples simula o app de um PSP Pagador. Nesta simulação poderá ser observada como pode ser realizada a comunicação entre sistemas heterogêneos por meio da "Área de transferência".
+Para exemplificar o uso dessa abordagem em um cenário onde um *E-commerce* é acessado via dispositivo móvel, disponibilizamos no endereço "[http://teste.vsxapps.com](http://teste.vsxapps.com/)" uma aplicação que simula de uma forma bem simples uma loja virtual e um app no endereço "[https://play.google.com/store/apps/details?id=br.com.testePI](https://play.google.com/store/apps/details?id=br.com.testePI)" que também de forma simples simula o app de um PSP Pagador. Nesta simulação poderá ser observada como pode ser realizada a comunicação entre sistemas heterogêneos por meio da "Área de transferência".
 
 > Observação: Deve ser utilizado um smartphone para realização desse testes.
