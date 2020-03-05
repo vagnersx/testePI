@@ -15,7 +15,7 @@ Alternativa à proposta que foi enviada referente a "Iniciação de Pagamento po
 
 **Contexto**
 
-O QR Code não passa de uma forma de representação de alguma informação, neste caso ele representa o conjunto de informações necessárias para a iniciação de um pagamento via Pix. Uma vez que um usuário esteja utilizando um dispositivo móvel, o QR Code não poderá ser utilizado de forma direta para disponibilizar esse conjunto de informações. Sendo assim uma alternativa simples seria fazer uso de um dos primeiros e mais importantes paradigmas na Interação homem-computador, o "Copiar e Colar", idealizado pelo americano Larry Tesler que nos deixou esse ano.
+O QR Code não passa de uma forma de representação de alguma informação, neste caso ele representa o conjunto de informações necessárias para a iniciação de um pagamento via Pix. Uma vez que um usuário esteja utilizando um dispositivo móvel, o QR Code não poderá ser utilizado de forma direta para disponibilizar esse conjunto de informações. Sendo assim uma alternativa simples seria fazer uso da "área de transferência" do dispositivo móvel para a disponibilização do conjunto de informações necessárias para o pagamento.
 
   
 
